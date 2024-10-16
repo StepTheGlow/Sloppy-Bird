@@ -450,7 +450,10 @@ texture = SubResource("GradientTexture2D_mrwtn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -459,21 +462,32 @@ offset = Vector2(320, 200)
 transform = Transform2D(1, 0, 0, 1, 320, 200)
 
 [node name="left" type="TouchScreenButton" parent="Control/CanvasLayer"]
-position = Vector2(-250, 80)
-scale = Vector2(4, 4)
+position = Vector2(-254, 60)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("8_fl3ys")
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="Control/CanvasLayer"]
-position = Vector2(-180, 80)
-scale = Vector2(4, 4)
+position = Vector2(-157, 60)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("9_dq62x")
 action = "ui_right"
 
-[node name="jump" type="TouchScreenButton" parent="Control/CanvasLayer"]
-position = Vector2(220, 50)
-scale = Vector2(4, 4)
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control/CanvasLayer"]
+
+[node name="Container" type="BoxContainer" parent="Control/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="jump" type="TouchScreenButton" parent="Control/CanvasLayer/Container"]
+position = Vector2(-413, -346)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("10_tdisr")
 action = "ui_accept"
-
-[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control/CanvasLayer"]

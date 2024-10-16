@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdal0r6o22oqb"
+path="res://.godot/imported/8 Bit Ao No Sumika.mp3-05205373fa85c1c47333df0d8eef7166.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/8 Bit Ao No Sumika.mp3"
+dest_files=["res://.godot/imported/8 Bit Ao No Sumika.mp3-05205373fa85c1c47333df0d8eef7166.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

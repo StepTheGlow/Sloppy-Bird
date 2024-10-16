@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u5ekxwn3awur"
+path="res://.godot/imported/8 Bit - Mephisto.mp3-1301e265ad752e090b3559d78c373dfa.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/8 Bit - Mephisto.mp3"
+dest_files=["res://.godot/imported/8 Bit - Mephisto.mp3-1301e265ad752e090b3559d78c373dfa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

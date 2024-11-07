@@ -81,8 +81,7 @@ sources/0 = SubResource("TileSetAtlasSource_htg0x")
 
 [sub_resource type="LabelSettings" id="LabelSettings_iqqnu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4u3n"]
-size = Vector2(5019.5, 145)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4axvb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_v2dov"]
 a = Vector2(-70.5, -62)
@@ -181,8 +180,8 @@ texture = ExtResource("8_v6jcn")
 [node name="Fall_zone" type="Area2D" parent="Physics"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/Fall_zone"]
-position = Vector2(2330.25, 269.5)
-shape = SubResource("RectangleShape2D_r4u3n")
+position = Vector2(2108, 269.5)
+shape = SubResource("WorldBoundaryShape2D_4axvb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Physics"]
 

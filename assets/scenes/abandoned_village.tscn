@@ -85,7 +85,7 @@ sources/0 = SubResource("TileSetAtlasSource_htg0x")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_v2dov"]
 a = Vector2(-70.5, -62)
-b = Vector2(128.5, 137)
+b = Vector2(121.5, 130)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vknm0"]
 a = Vector2(-32, -48)
@@ -180,8 +180,9 @@ texture = ExtResource("8_v6jcn")
 [node name="Fall_zone" type="Area2D" parent="Physics"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/Fall_zone"]
-position = Vector2(2108, 269.5)
+position = Vector2(0, 269.5)
 shape = SubResource("WorldBoundaryShape2D_4axvb")
+debug_color = Color(1, 0.266667, 0, 0.419608)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Physics"]
 

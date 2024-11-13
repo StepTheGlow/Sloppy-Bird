@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://30vc03sgo513"]
+[gd_scene load_steps=21 format=4 uid="uid://30vc03sgo513"]
 
 [ext_resource type="Texture2D" uid="uid://mk1m24fig4fo" path="res://assets/tilesets/bamboo.png" id="1_fjvx2"]
 [ext_resource type="Texture2D" uid="uid://b3ajel0vfs6o7" path="res://assets/tilesets/grass tileset.png" id="2_n4ei5"]
@@ -81,6 +81,15 @@ sources/0 = SubResource("TileSetAtlasSource_htg0x")
 
 [sub_resource type="LabelSettings" id="LabelSettings_iqqnu"]
 
+[sub_resource type="Gradient" id="Gradient_eh1v8"]
+offsets = PackedFloat32Array(0.0173913, 1)
+colors = PackedColorArray(0, 0, 0, 0.227451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_meu5r"]
+gradient = SubResource("Gradient_eh1v8")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4axvb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_v2dov"]
@@ -122,14 +131,14 @@ theme_type_variation = &"HeaderLarge"
 text = "JUMP MAN JUST JUMP NOTHING ELSE TO DO IN THIS NONSENSE"
 label_settings = SubResource("LabelSettings_iqqnu")
 
-[node name="ColorRect" type="ColorRect" parent="Label"]
+[node name="ColorRect" type="TextureRect" parent="Label"]
 show_behind_parent = true
 layout_mode = 0
-offset_left = -1.0
-offset_top = -6.0
-offset_right = 556.0
-offset_bottom = 34.0
-color = Color(0, 0, 0, 0.470588)
+offset_left = -865.0
+offset_top = 200.0
+offset_right = 4335.0
+offset_bottom = 296.0
+texture = SubResource("GradientTexture2D_meu5r")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(320, 180)
@@ -180,7 +189,7 @@ texture = ExtResource("8_v6jcn")
 [node name="Fall_zone" type="Area2D" parent="Physics"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Physics/Fall_zone"]
-position = Vector2(0, 269.5)
+position = Vector2(0, 350)
 shape = SubResource("WorldBoundaryShape2D_4axvb")
 debug_color = Color(1, 0.266667, 0, 0.419608)
 

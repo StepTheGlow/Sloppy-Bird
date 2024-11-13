@@ -426,6 +426,8 @@ autoplay = "NIGHTPOOL_IDLE"
 shape = SubResource("CircleShape2D_g8xas")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 300
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

@@ -450,6 +450,7 @@ texture_normal = ExtResource("5")
 texture_pressed = ExtResource("6")
 shape = SubResource("RectangleShape2D_ehjwd")
 action = "left"
+visibility_mode = 1
 
 [node name="right button" type="TouchScreenButton" parent="UI/left_control"]
 texture_filter = 1
@@ -459,6 +460,7 @@ texture_normal = ExtResource("7")
 texture_pressed = ExtResource("8")
 shape = SubResource("RectangleShape2D_i2tlu")
 action = "right"
+visibility_mode = 1
 
 [node name="right_control" type="Control" parent="UI"]
 layout_mode = 3
@@ -480,6 +482,7 @@ texture_normal = ExtResource("9")
 texture_pressed = ExtResource("10")
 shape = SubResource("RectangleShape2D_vgcnf")
 action = "up"
+visibility_mode = 1
 
 [node name="a button" type="TouchScreenButton" parent="UI/right_control"]
 position = Vector2(-402, -171)
@@ -488,6 +491,7 @@ texture_normal = ExtResource("11")
 texture_pressed = ExtResource("12")
 shape = SubResource("RectangleShape2D_u4esh")
 action = "action"
+visibility_mode = 1
 
 [node name="heart" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(85, 66)

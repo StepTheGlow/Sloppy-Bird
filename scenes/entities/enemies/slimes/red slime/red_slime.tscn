@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scenes/entities/enemies/slimes/red slime/Red Slime.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ylmxb5al5bg0" path="res://assets/character/slime_red.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0pm5"]
+atlas = ExtResource("2")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n38u"]
+atlas = ExtResource("2")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruv6m"]
+atlas = ExtResource("2")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnnq4"]
+atlas = ExtResource("2")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1swgj"]
+atlas = ExtResource("2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnkb4"]
+atlas = ExtResource("2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r477n"]
+atlas = ExtResource("2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eonxo"]
+atlas = ExtResource("2")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3cfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0pm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n38u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruv6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnnq4")
+}],
+"loop": true,
+"name": &"red_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1swgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnkb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r477n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eonxo")
+}],
+"loop": true,
+"name": &"red_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpmp"]
+size = Vector2(66, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxlqq"]
+size = Vector2(62, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8o5h"]
+size = Vector2(212, 185)
+
+[node name="Red Slime" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="red_slime_animation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_w3cfr")
+animation = &"red_right"
+autoplay = "red_left"
+frame_progress = 0.03801529854536057
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-25, 0)
+target_position = Vector2(0, 112.5)
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(25, 0)
+target_position = Vector2(0, 112.5)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="cooll" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_nhpmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wxlqq")
+
+[node name="damage cooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_b8o5h")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="damage cooldown" to="." method="_on_damage_cooldown_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

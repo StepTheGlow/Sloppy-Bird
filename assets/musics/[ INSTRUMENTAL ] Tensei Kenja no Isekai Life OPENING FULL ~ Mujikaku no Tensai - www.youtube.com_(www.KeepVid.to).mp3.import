@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://er3l5strsp0s"
+path="res://.godot/imported/[ INSTRUMENTAL ] Tensei Kenja no Isekai Life OPENING FULL ~ Mujikaku no Tensai - www.youtube.com_(www.KeepVid.to).mp3-7bdc9a4eef45ea8878ea5c72a8f1f113.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/[ INSTRUMENTAL ] Tensei Kenja no Isekai Life OPENING FULL ~ Mujikaku no Tensai - www.youtube.com_(www.KeepVid.to).mp3"
+dest_files=["res://.godot/imported/[ INSTRUMENTAL ] Tensei Kenja no Isekai Life OPENING FULL ~ Mujikaku no Tensai - www.youtube.com_(www.KeepVid.to).mp3-7bdc9a4eef45ea8878ea5c72a8f1f113.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

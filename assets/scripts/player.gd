@@ -71,7 +71,7 @@ func _on_change_pressed() -> void:
 
 
 
-func _on_fall_zone_body_entered(body: Node2D) -> void:
+func _on_fall_zone_body_entered(_body: Node2D) -> void:
 	velocity.y = -600
 	await get_tree().create_timer(1).timeout
 	get_tree().reload_current_scene() # Replace with function body.

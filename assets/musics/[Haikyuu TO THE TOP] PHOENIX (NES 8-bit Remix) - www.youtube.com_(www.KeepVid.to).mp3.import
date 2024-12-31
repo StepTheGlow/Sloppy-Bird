@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bejlqomes2xme"
+path="res://.godot/imported/[Haikyuu TO THE TOP] PHOENIX (NES 8-bit Remix) - www.youtube.com_(www.KeepVid.to).mp3-48a32e8d91b9fd433411cf13a4b842ca.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/[Haikyuu TO THE TOP] PHOENIX (NES 8-bit Remix) - www.youtube.com_(www.KeepVid.to).mp3"
+dest_files=["res://.godot/imported/[Haikyuu TO THE TOP] PHOENIX (NES 8-bit Remix) - www.youtube.com_(www.KeepVid.to).mp3-48a32e8d91b9fd433411cf13a4b842ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

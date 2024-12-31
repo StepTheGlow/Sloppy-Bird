@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgumfhjx6p288"]
+
+[ext_resource type="Texture2D" uid="uid://bqmoyua7vx3so" path="res://assets/character/slime_blue.png" id="1_k0g2s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4rlf"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5tnj"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvmft"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hwbs"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvmob"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjnuj"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8pk5"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52psk"]
+atlas = ExtResource("1_k0g2s")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_job2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4rlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5tnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvmft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hwbs")
+}],
+"loop": true,
+"name": &"blue_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvmob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjnuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8pk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52psk")
+}],
+"loop": true,
+"name": &"blue_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpmp"]
+size = Vector2(66, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxlqq"]
+size = Vector2(62, 42)
+
+[node name="Slime" type="CharacterBody2D"]
+
+[node name="slime_animation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_job2k")
+animation = &"blue_left"
+autoplay = "blue_left"
+frame_progress = 0.631385
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-25, 0)
+target_position = Vector2(0, 112.5)
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(25, 0)
+target_position = Vector2(0, 112.5)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="cooll" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_nhpmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wxlqq")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

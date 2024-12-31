@@ -134,7 +134,7 @@ label_settings = SubResource("LabelSettings_iqqnu")
 [node name="ColorRect" type="TextureRect" parent="Label"]
 show_behind_parent = true
 layout_mode = 0
-offset_left = -865.0
+offset_left = -2057.0
 offset_top = 200.0
 offset_right = 4335.0
 offset_bottom = 296.0

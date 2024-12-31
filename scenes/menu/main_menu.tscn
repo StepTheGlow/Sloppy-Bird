@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://oa7m5t8wrvkx"]
+
+[ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b6t1rmnj6yilx" path="res://assets/Backgrounds/background layer 1 sky.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://er3l5strsp0s" path="res://assets/musics/[ INSTRUMENTAL ] Tensei Kenja no Isekai Life OPENING FULL ~ Mujikaku no Tensai - www.youtube.com_(www.KeepVid.to).mp3" id="3"]
+[ext_resource type="Texture2D" uid="uid://cy3s3i2e46trr" path="res://assets/UI/start button not pressed.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://djj28ydattg2r" path="res://assets/UI/start button pressed.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bwj51xb35gly3" path="res://assets/UI/logo.png" id="6"]
+
+[sub_resource type="Animation" id="Animation_uyuy8"]
+resource_name = "fade_in"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sg5ug"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mju46"]
+_data = {
+"fade_in": SubResource("Animation_uyuy8"),
+"fade_out": SubResource("Animation_sg5ug")
+}
+
+[node name="main menu" type="Node2D"]
+script = ExtResource("1")
+
+[node name="menu  background" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="menu  background"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="TextureRect" type="TextureRect" parent="menu  background/ParallaxLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+autoplay = true
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mju46")
+}
+autoplay = "fade_in"
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+offset_right = 1765.0
+offset_bottom = 1033.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -21.0
+offset_right = 149.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Control"]
+z_index = -10
+position = Vector2(13, 8)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("4")
+texture_pressed = ExtResource("5")
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control2"]
+position = Vector2(-502, -157)
+scale = Vector2(8, 8)
+texture = ExtResource("6")
+centered = false
+
+[connection signal="pressed" from="CanvasLayer/Control/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

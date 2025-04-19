@@ -59,3 +59,14 @@ func open_chest():
 	tooltip.visible = false
 	opened_chest = true
 	chest.play("opening")
+
+
+func _on_ladder_body_entered(body):
+	if body.name == "Player":
+		$Player.gravity = 0
+		$Player.velocity.y -= 100 # Replace with function body.
+
+
+func _on_ladder_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		$Player.gravity = 980 # Replace with function body.

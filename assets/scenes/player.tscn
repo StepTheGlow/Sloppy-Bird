@@ -1,7 +1,7 @@
 [gd_scene load_steps=66 format=3 uid="uid://bxlj1828aog0x"]
 
 [ext_resource type="Texture2D" uid="uid://d14n4oncbpmcr" path="res://assets/player/DEADPOOL IDLE.png" id="1_jrrpd"]
-[ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_y65ed"]
+[ext_resource type="Script" uid="uid://cuwacp14r6bwp" path="res://assets/scripts/player.gd" id="1_y65ed"]
 [ext_resource type="Texture2D" uid="uid://kclhsp4xbyoy" path="res://assets/player/GROOVYPOOL IDLE.png" id="2_4hwya"]
 [ext_resource type="Texture2D" uid="uid://cboubdyhhkdk1" path="res://assets/player/DEADPOOL.png" id="3_us33y"]
 [ext_resource type="Texture2D" uid="uid://ciqwads24n5fi" path="res://assets/player/NIGHTPOOL IDLE.png" id="4_631hk"]

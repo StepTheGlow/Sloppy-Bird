@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2n4xb2dm7jxu"]
+[gd_scene load_steps=14 format=3 uid="uid://d2n4xb2dm7jxu"]
 
-[ext_resource type="Script" path="res://scenes/entities/enemies/slimes/blue slime/blue_slime.gd" id="1"]
+[ext_resource type="Script" uid="uid://bwjehjbsxw31h" path="res://scenes/entities/enemies/slimes/blue slime/blue_slime.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bqmoyua7vx3so" path="res://assets/character/slime_blue.png" id="2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d880r"]
@@ -73,29 +73,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpmp"]
-size = Vector2(66, 44)
+size = Vector2(28, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxlqq"]
-size = Vector2(62, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw307"]
-size = Vector2(212, 185)
+size = Vector2(28, 22)
 
 [node name="Blue Slime" type="CharacterBody2D"]
 script = ExtResource("1")
 
 [node name="blue_slime_animation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_job2k")
 animation = &"blue_left"
 autoplay = "blue_left"
 
 [node name="RayCast2D_left" type="RayCast2D" parent="."]
-position = Vector2(-25, 0)
+position = Vector2(-14, 0)
 target_position = Vector2(0, 112.5)
 
 [node name="RayCast2D_right" type="RayCast2D" parent="."]
-position = Vector2(25, 0)
+position = Vector2(14, 0)
 target_position = Vector2(0, 112.5)
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -103,7 +100,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="cooll" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-1, -2)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_nhpmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,14 +111,6 @@ shape = SubResource("RectangleShape2D_wxlqq")
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_gw307")
-
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="hitbox" to="." method="_on_hitbox_area_exited"]
 [connection signal="timeout" from="damage cooldown" to="." method="_on_damage_cooldown_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

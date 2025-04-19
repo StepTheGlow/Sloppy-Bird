@@ -15,8 +15,8 @@ var dmg_sound = true
 var dying_animation = false
 #main variables
 var heart = Global.life
-var SPEED = 200
-const JUMP_VELOCITY = -600
+var SPEED = 100
+const JUMP_VELOCITY = -400
 var JUMP_AGAIN = false
 var died = false
 var heart_str = str(heart)

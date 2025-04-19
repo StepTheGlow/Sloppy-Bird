@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=14 format=3 uid="uid://qg8a2684ec6b"]
 
-[ext_resource type="Script" path="res://scenes/regions/bazaar/Bazaar.gd" id="1"]
+[ext_resource type="Script" uid="uid://djjfkaf84ek74" path="res://scenes/regions/bazaar/Bazaar.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dclxjklarowx0" path="res://assets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://dtkvdsj8mx0l2" path="res://assets/tiles/dry grass.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://b8nacnk6tsy0k" path="res://scenes/entities/player/Player.tscn" id="4"]
@@ -8,73 +8,31 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwavv"]
 texture = ExtResource("3")
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:0/0/script = null
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0/script = null
 2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0/script = null
 3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/script = null
 4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/script = null
 0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0/script = null
 1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0/script = null
 2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0/script = null
 4:1/0 = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/script = null
 0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0/script = null
 1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0/script = null
 2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:2/0/script = null
 3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
-3:2/0/script = null
 4:2/0 = 0
-4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:2/0/physics_layer_0/angular_velocity = 0.0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
 4:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, 8, 8, 8, -8, 8)
-4:2/0/script = null
 
 [sub_resource type="TileSet" id="TileSet_lxsrd"]
 physics_layer_0/collision_layer = 1
@@ -112,7 +70,7 @@ tracks/0/path = NodePath("transition/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.799999952316284),
+"times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -120,12 +78,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mju46"]
 _data = {
-"fade_in": SubResource("Animation_uyuy8"),
-"fade_out": SubResource("Animation_sg5ug")
+&"fade_in": SubResource("Animation_uyuy8"),
+&"fade_out": SubResource("Animation_sg5ug")
 }
 
 [sub_resource type="Gradient" id="Gradient_mukwj"]
-offsets = PackedFloat32Array(0, 0.9913039803504944)
+offsets = PackedFloat32Array(0, 0.991304)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dk6cx"]
@@ -133,7 +91,7 @@ gradient = SubResource("Gradient_mukwj")
 width = 1000
 height = 1000
 fill = 1
-fill_from = Vector2(0.5, 0.6000000238418579)
+fill_from = Vector2(0.5, 0.6)
 metadata/_snap_enabled = true
 
 [node name="Bazaar" type="Node2D"]
@@ -173,8 +131,8 @@ autoplay = "fade_in"
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
 anchors_preset = -1
-anchor_top = -2.90693998336792
-anchor_right = 7.492189884185791
+anchor_top = -2.90694
+anchor_right = 7.49219
 offset_left = -525.0
 offset_top = -707.0
 offset_right = 1923.0

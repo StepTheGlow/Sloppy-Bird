@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://bn2dk8cct0bll"]
 
-[ext_resource type="Script" path="res://scenes/entities/enemies/slimes/red slime/Red Slime.gd" id="1"]
+[ext_resource type="Script" uid="uid://dvaakw8oh04qg" path="res://scenes/entities/enemies/slimes/red slime/Red Slime.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ylmxb5al5bg0" path="res://assets/character/slime_red.png" id="2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0pm5"]
@@ -89,7 +89,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_w3cfr")
 animation = &"red_right"
 autoplay = "red_left"
-frame_progress = 0.03801529854536057
+frame_progress = 0.0380153
 
 [node name="RayCast2D_left" type="RayCast2D" parent="."]
 position = Vector2(-25, 0)

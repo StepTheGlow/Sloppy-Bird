@@ -1,9 +1,9 @@
 extends Node2D
 #player position variables
-var player_start_posx = -3 
-var player_start_posy = -336
-var back_house_posx = 1104
-var back_house_posy = -1812
+var player_start_posx = 250
+var player_start_posy = -50
+var back_house_posx = 880
+var back_house_posy = -824
 var back_bazaar_posx = 8719 #back from bazaar
 var back_bazaar_posy = -1918
 var in_house_door = false
@@ -16,7 +16,7 @@ var in_house_door = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera_2d.limit_right = 9640
-	camera_2d.limit_bottom = 730   #limit camera
+	camera_2d.limit_bottom = 190   #limit camera
 	#change player position
 	if Global.loaded_game == true:
 		$Player.position.x = player_start_posx

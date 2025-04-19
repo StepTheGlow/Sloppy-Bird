@@ -1,11 +1,30 @@
-[gd_scene load_steps=32 format=3 uid="uid://clrkoybwc53iw"]
+[gd_scene load_steps=41 format=4 uid="uid://clrkoybwc53iw"]
 
-[ext_resource type="Script" path="res://scenes/regions/ghost_town/structures/house.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bc63jbw8vqiey" path="res://assets/tiles/wooden house interior.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bbiumsoktgnt0" path="res://assets/tiles/house_props.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://big7php8eiqbm" path="res://assets/tiles/chest_001.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://beeetlr2ww055" path="res://assets/tiles/torch_anim.png" id="5"]
+[ext_resource type="Script" uid="uid://bvvw4yjw67m6i" path="res://scenes/regions/ghost_town/structures/house.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bc63jbw8vqiey" path="res://assets/tilesets/wooden house interior.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dltvwv38wt4np" path="res://assets/tilesets/ladder.png" id="2_yuyoe"]
+[ext_resource type="Texture2D" uid="uid://bbiumsoktgnt0" path="res://assets/tilesets/house_props.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cr7q7slde8x18" path="res://assets/tilesets/platform wood.png" id="3_fp2tm"]
+[ext_resource type="Texture2D" uid="uid://big7php8eiqbm" path="res://assets/tilesets/chest_001.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://beeetlr2ww055" path="res://assets/tilesets/torch_anim.png" id="5"]
 [ext_resource type="PackedScene" uid="uid://b8nacnk6tsy0k" path="res://scenes/entities/player/Player.tscn" id="6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fp2tm"]
+texture = ExtResource("2_yuyoe")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ugo4"]
+texture = ExtResource("3_fp2tm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1jwj"]
 texture = ExtResource("2")
@@ -36,7 +55,6 @@ texture = ExtResource("2")
 4:3/0 = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(5.92202, -8, 8, -8, 8, 8, 5.92202, 8)
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.15425, 8, 3.97748, 8, 8, -8, 8)
 2:4/0 = 0
@@ -44,7 +62,6 @@ texture = ExtResource("2")
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.15425, 8, 3.97748, 8, 8, -8, 8)
 4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
 5:2/0 = 0
 6:2/0 = 0
 5:3/0 = 0
@@ -809,6 +826,33 @@ texture = ExtResource("3")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_g1jwj")
 sources/3 = SubResource("TileSetAtlasSource_1nkdq")
+sources/0 = SubResource("TileSetAtlasSource_fp2tm")
+sources/1 = SubResource("TileSetAtlasSource_4ugo4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuyoe"]
+texture = ExtResource("2_yuyoe")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sjyl"]
+texture = ExtResource("3_fp2tm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fp2tm"]
+sources/0 = SubResource("TileSetAtlasSource_yuyoe")
+sources/1 = SubResource("TileSetAtlasSource_3sjyl")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fp2tm"]
+b = Vector2(128, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgwol"]
 atlas = ExtResource("4")
@@ -908,7 +952,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftukx"]
-size = Vector2(58, 119)
+size = Vector2(63.9998, 88)
 
 [sub_resource type="Animation" id="Animation_uyuy8"]
 resource_name = "fade_in"
@@ -944,8 +988,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mju46"]
 _data = {
-"fade_in": SubResource("Animation_uyuy8"),
-"fade_out": SubResource("Animation_sg5ug")
+&"fade_in": SubResource("Animation_uyuy8"),
+&"fade_out": SubResource("Animation_sg5ug")
 }
 
 [sub_resource type="Gradient" id="Gradient_j058w"]
@@ -958,13 +1002,16 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_keoxh"]
-offsets = PackedFloat32Array(0, 0.73913)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.359649, 0.684211)
+colors = PackedColorArray(0.394737, 0.394737, 0.394737, 1, 0.394737, 0.394737, 0.394737, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_at21y"]
 gradient = SubResource("Gradient_keoxh")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp2tm"]
+size = Vector2(24, 216)
 
 [node name="house" type="Node2D"]
 script = ExtResource("1")
@@ -978,10 +1025,34 @@ offset_bottom = 2296.0
 color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_g7624")
 format = 2
-layer_0/tile_data = PackedInt32Array(1, 65538, 0, 2, 131074, 0, 3, 196610, 0, 4, 65538, 0, 5, 131074, 0, 6, 196610, 0, 7, 65538, 0, 8, 131074, 0, 9, 196610, 0, 10, 262146, 0, 65537, 65538, 1, 131073, 65538, 2, 196609, 65538, 1, 65538, 131074, 2, 131074, 327682, 0, 196610, 131074, 1, 65539, 131074, 2, 131075, 131074, 2, 196611, 131074, 2, 65540, 131074, 2, 131076, 65538, 2, 196612, 131074, 2, 65541, 131074, 2, 131077, 131074, 2, 196613, 131074, 2, 65542, 131074, 2, 131078, 196610, 2, 196614, 131074, 2, 262148, 131074, 2, 327684, 131074, 2, 393220, 65538, 4, 262149, 131074, 2, 327685, 131074, 2, 393221, 131074, 4, 262150, 131074, 2, 327686, 131074, 2, 393222, 196610, 4, 262145, 65538, 2, 327681, 65538, 3, 393217, 65538, 4, 262146, 327682, 2, 327682, 327682, 3, 393218, 327682, 4, 262147, 393218, 2, 327683, 393218, 3, 393219, 393218, 4, 262154, 262146, 3, 327690, 131074, 2, 393226, 262146, 4, 262151, 131074, 2, 327687, 131074, 2, 393223, 65538, 4, 262152, 131074, 2, 327688, 131074, 2, 393224, 131074, 4, 262153, 131074, 2, 327689, 131074, 2, 393225, 196610, 4, 65543, 131074, 2, 131079, 65538, 2, 196615, 131074, 2, 65544, 131074, 1, 131080, 131074, 2, 196616, 65538, 1, 65545, 327682, 0, 131081, 131074, 2, 196617, 131074, 2, 65546, 262146, 2, 131082, 262146, 3, 196618, 262146, 2, 65536, 2, 2, 131072, 2, 3, 196608, 2, 1, 262144, 327682, 0, 327680, 2, 3, 0, 2, 0, 393216, 2, 4)
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAAAAAgABAAAAAAACAAAAAgACAAAAAAADAAAAAgADAAAAAAAEAAAAAgABAAAAAAAFAAAAAgACAAAAAAAGAAAAAgADAAAAAAAHAAAAAgABAAAAAAAIAAAAAgACAAAAAAAJAAAAAgADAAAAAAABAAEAAgABAAEAAAABAAIAAgABAAIAAAABAAMAAgABAAEAAAACAAEAAgACAAIAAAACAAIAAgAFAAAAAAACAAMAAgACAAEAAAADAAEAAgACAAIAAAADAAIAAgACAAIAAAADAAMAAgACAAIAAAAEAAEAAgACAAIAAAAEAAIAAgABAAIAAAAEAAMAAgACAAIAAAAFAAEAAgACAAIAAAAFAAIAAgACAAIAAAAFAAMAAgACAAIAAAAGAAEAAgACAAIAAAAGAAIAAgADAAIAAAAGAAMAAgACAAIAAAAEAAQAAgACAAIAAAAEAAUAAgACAAIAAAAEAAYAAgABAAQAAAAFAAQAAgACAAIAAAAFAAUAAgACAAIAAAAFAAYAAgACAAQAAAAGAAQAAgACAAIAAAAGAAUAAgACAAIAAAAGAAYAAgADAAQAAAABAAQAAgABAAIAAAABAAUAAgABAAMAAAABAAYAAgABAAQAAAACAAQAAgAFAAIAAAACAAUAAgAFAAMAAAACAAYAAgAFAAQAAAADAAQAAgAGAAIAAAADAAUAAgAGAAMAAAADAAYAAgAGAAQAAAAKAAQAAgACAAMAAAAKAAUAAgACAAIAAAAKAAYAAgADAAQAAAAHAAQAAgACAAIAAAAHAAUAAgACAAIAAAAHAAYAAgABAAQAAAAIAAQAAgACAAIAAAAIAAUAAgACAAIAAAAIAAYAAgACAAQAAAAJAAQAAgACAAIAAAAJAAUAAgACAAIAAAAJAAYAAgADAAQAAAAHAAEAAgACAAIAAAAHAAIAAgABAAIAAAAHAAMAAgACAAIAAAAIAAEAAgACAAEAAAAIAAIAAgACAAIAAAAIAAMAAgABAAEAAAAJAAEAAgAFAAAAAAAJAAIAAgACAAIAAAAJAAMAAgACAAIAAAAKAAEAAgADAAEAAAAKAAMAAgABAAMAAAAAAAEAAgAAAAIAAAAAAAIAAgAAAAMAAAAAAAMAAgAAAAEAAAAAAAQAAgAFAAAAAAAAAAUAAgAAAAMAAAAAAAAAAgAAAAAAAAAAAAYAAgAAAAQAAAAKAAAAAgABAAEAAAAKAAIAAgADAAEAAAALAAAAAgADAAEAAAALAAEAAgACAAMAAAALAAIAAgACAAIAAAALAAMAAgADAAEAAAALAAQAAgABAAEAAAALAAUAAgABAAEAAAALAAYAAgACAAQAAAAMAAAAAgADAAEAAAAMAAEAAgABAAEAAAAMAAIAAgACAAEAAAAMAAMAAgACAAMAAAAMAAQAAgACAAIAAAAMAAUAAgABAAMAAAAMAAYAAgADAAQAAAANAAYAAgABAAQAAAANAAUAAgADAAMAAAANAAQAAgADAAEAAAANAAMAAgADAAEAAAANAAIAAgACAAIAAAANAAEAAgABAAIAAAAOAAEAAgACAAEAAAAPAAEAAgABAAMAAAAPAAIAAgABAAEAAAAPAAMAAgABAAEAAAAPAAQAAgABAAIAAAAPAAUAAgABAAEAAAAOAAUAAgAFAAAAAAAOAAYAAgACAAQAAAAOAAQAAgACAAIAAAAOAAMAAgADAAEAAAAOAAIAAgADAAMAAAAOAAAAAgACAAIAAAANAAAAAgABAAIAAAAPAAYAAgACAAQAAAAPAAAAAgAFAAAAAAAQAAAAAgADAAEAAAAQAAEAAgADAAEAAAAQAAIAAgADAAEAAAAQAAMAAgABAAMAAAAQAAQAAgACAAMAAAAQAAUAAgACAAMAAAAQAAYAAgACAAQAAAARAAYAAgADAAQAAAARAAUAAgABAAIAAAARAAQAAgABAAEAAAARAAMAAgACAAMAAAARAAIAAgAFAAAAAAARAAEAAgADAAMAAAARAAAAAgACAAIAAAASAAAAAgADAAIAAAASAAEAAgABAAEAAAASAAIAAgABAAMAAAASAAMAAgABAAEAAAASAAQAAgABAAEAAAASAAUAAgABAAMAAAASAAYAAgACAAQAAAAMAP//AgACAAEAAAAMAP7/AgABAAMAAAAMAP3/AgABAAEAAAAMAPz/AgACAAIAAAAMAPn/AgABAAIAAAAMAPr/AgADAAIAAAAMAPv/AgABAAIAAAANAPn/AgABAAMAAAAOAPn/AgACAAMAAAAPAPn/AgADAAIAAAAQAPn/AgACAAIAAAARAPn/AgADAAIAAAASAPn/AgABAAEAAAATAPn/AgACAAEAAAAUAPn/AgABAAMAAAAVAPn/AgABAAEAAAAWAPn/AgABAAIAAAAXAPn/AgADAAMAAAAYAPn/AgADAAIAAAAZAPn/AgADAAEAAAAaAPn/AgADAAIAAAAbAPn/AgABAAEAAAAcAPn/AgACAAIAAAAdAPn/AgABAAMAAAAeAPn/AgADAAEAAAAeAPr/AgABAAMAAAAeAPv/AgADAAMAAAAeAPz/AgACAAMAAAAeAP3/AgACAAEAAAAeAP7/AgACAAIAAAAeAP//AgABAAQAAAAdAP//AgACAAQAAAAcAP//AgADAAQAAAAbAP//AgACAAQAAAAaAP//AgADAAQAAAAZAP//AgACAAQAAAAYAP//AgABAAQAAAAXAP//AgABAAQAAAAWAP//AgADAAQAAAAVAP//AgACAAQAAAAUAP//AgABAAQAAAATAAAAAgAEAAEAAAATAP//AgADAAIAAAATAAEAAgAEAAEAAAATAAIAAgAEAAMAAAATAAMAAgAEAAIAAAATAAQAAgAEAAEAAAATAAUAAgAEAAIAAAATAAYAAgAEAAQAAAASAP7/AgACAAEAAAASAP//AgACAAIAAAARAP//AgACAAIAAAAQAP//AgABAAIAAAAPAP//AgACAAIAAAAPAP7/AgABAAEAAAAOAP7/AgADAAEAAAANAP7/AgABAAEAAAANAP//AgACAAEAAAAOAP//AgABAAIAAAANAP3/AgABAAIAAAANAPz/AgADAAIAAAANAPv/AgAFAAAAAAANAPr/AgADAAEAAAAPAPr/AgADAAIAAAAPAPv/AgABAAEAAAAOAPv/AgADAAIAAAAOAPz/AgACAAIAAAAOAP3/AgABAAEAAAAPAP3/AgACAAEAAAAQAP3/AgABAAEAAAARAP3/AgADAAEAAAASAP3/AgADAAMAAAATAP3/AgADAAMAAAAUAP3/AgACAAEAAAAVAP3/AgABAAMAAAAWAP3/AgABAAEAAAAXAP3/AgABAAIAAAAYAPz/AgADAAEAAAAZAPz/AgADAAEAAAAaAPz/AgACAAIAAAAbAP3/AgADAAEAAAAcAP3/AgABAAEAAAAdAP3/AgADAAEAAAAdAP7/AgABAAMAAAAcAP7/AgADAAMAAAAbAP7/AgABAAIAAAAaAP7/AgADAAMAAAAZAP7/AgADAAIAAAAYAP7/AgABAAMAAAAXAP7/AgABAAEAAAAWAP7/AgACAAEAAAAVAP7/AgACAAMAAAAUAP7/AgACAAMAAAATAP7/AgADAAIAAAARAP7/AgADAAEAAAAQAP7/AgADAAIAAAAOAPr/AgADAAMAAAAQAPr/AgABAAIAAAARAPr/AgAFAAAAAAASAPr/AgABAAMAAAATAPr/AgACAAMAAAAUAPr/AgACAAEAAAAVAPr/AgADAAMAAAAWAPr/AgADAAMAAAAXAPr/AgADAAMAAAAYAPr/AgACAAIAAAAZAPr/AgABAAEAAAAaAPr/AgADAAMAAAAbAPr/AgACAAEAAAAcAPr/AgABAAMAAAAdAPr/AgACAAEAAAAdAPv/AgABAAMAAAAdAPz/AgABAAEAAAAcAPz/AgACAAIAAAAbAPz/AgAFAAAAAAAaAPv/AgABAAEAAAAZAPv/AgACAAIAAAAYAPv/AgADAAIAAAAUAPv/AgACAAMAAAATAPv/AgABAAMAAAASAPv/AgADAAMAAAARAPv/AgADAAIAAAAQAPv/AgACAAEAAAAQAPz/AgADAAIAAAAPAPz/AgACAAMAAAARAPz/AgADAAMAAAASAPz/AgADAAMAAAATAPz/AgACAAEAAAAUAPz/AgACAAIAAAAVAPz/AgABAAEAAAAVAPv/AgADAAEAAAAWAPv/AgACAAMAAAAXAPv/AgABAAMAAAAWAPz/AgADAAIAAAAXAPz/AgADAAMAAAAcAPv/AgABAAIAAAAbAPv/AgABAAIAAAAYAP3/AgADAAEAAAAZAP3/AgADAAIAAAAaAP3/AgABAAEAAAA=")
+tile_set = SubResource("TileSet_g7624")
+
+[node name="Layer2" type="TileMapLayer" parent="TileMap"]
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAATAAEAAAAAAAEAAAATAAIAAAAAAAIAAAATAAMAAAAAAAEAAAATAAQAAAAAAAIAAAATAAUAAAAAAAEAAAATAAAAAAAAAAAAAAATAAYAAAAAAAMAAAAMAAAAAQABAAEAAAANAAAAAQABAAEAAAAOAAAAAQABAAEAAAAPAAAAAQABAAEAAAAQAAAAAQABAAEAAAARAAAAAQABAAEAAAASAAAAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_fp2tm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
+position = Vector2(192, 0)
+shape = SubResource("SegmentShape2D_fp2tm")
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+position = Vector2(316, 0)
+polygon = PackedVector2Array(4, -4, 4, -4, 4, 0, 0, 0)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+polygon = PackedVector2Array(496, 0, 496, -112, 192, -112, 192, 0, 188, -4, 188, -116, 500, -116, 500, -4)
 
 [node name="chest" type="AnimatedSprite2D" parent="."]
 position = Vector2(595, 352)
@@ -1003,24 +1074,24 @@ position = Vector2(0.0999832, 9.00001)
 shape = SubResource("RectangleShape2D_08yad")
 
 [node name="torch" type="AnimatedSprite2D" parent="."]
-position = Vector2(456, 197)
-scale = Vector2(4, 4)
+position = Vector2(216, 88)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_c6bc0")
 autoplay = "default"
 frame_progress = 0.982628
 
 [node name="Player" parent="." instance=ExtResource("6")]
-position = Vector2(-403, -13)
+position = Vector2(98, 168)
 
 [node name="door" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
-position = Vector2(192, 376.5)
+position = Vector2(96.0001, 172)
 shape = SubResource("RectangleShape2D_ftukx")
 
 [node name="transition" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mju46")
+&"": SubResource("AnimationLibrary_mju46")
 }
 autoplay = "fade_in"
 
@@ -1037,8 +1108,8 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(457, 194)
-scale = Vector2(9.07813, 8.76563)
+position = Vector2(213, 80)
+scale = Vector2(4, 4)
 color = Color(0.984314, 0.705882, 0.0980392, 1)
 shadow_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture2D_feie1")
@@ -1049,12 +1120,20 @@ energy = 0.7
 blend_mode = 1
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(192.5, 350)
-scale = Vector2(2.32813, 3.21875)
+position = Vector2(96, 180)
+scale = Vector2(2, 2.375)
 energy = 0.62
 texture = SubResource("GradientTexture2D_at21y")
+
+[node name="ladder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
+position = Vector2(628, 108)
+shape = SubResource("RectangleShape2D_fp2tm")
 
 [connection signal="body_entered" from="chest/chest" to="." method="_on_chest_body_entered"]
 [connection signal="body_exited" from="chest/chest" to="." method="_on_chest_body_exited"]
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
 [connection signal="body_exited" from="door" to="." method="_on_door_body_exited"]
+[connection signal="body_entered" from="ladder" to="." method="_on_ladder_body_entered"]
+[connection signal="body_exited" from="ladder" to="." method="_on_ladder_body_exited"]

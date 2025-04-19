@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Sloppy Bird"
 run/main_scene="res://scenes/menu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://assets/UI/Farhan063 logo.png"
 config/icon="res://Farhan063 logo.png"
@@ -23,10 +23,11 @@ Global="*res://scenes/scripts/global.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/size/viewport_width=640
+window/size/viewport_height=320
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [editor]
 
@@ -69,7 +70,7 @@ action={
 
 [input_devices]
 
-pointing/emulate_touch_from_mouse=true
+pointing/stretch/mode="canvas_items"
 
 [physics]
 
